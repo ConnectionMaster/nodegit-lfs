@@ -1,12 +1,12 @@
 import net from 'net';
 import R from 'ramda';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 let tcpServer = null;
 
 const usernameAndPasswordByRequestId = {};
 
-export const createCredRequestId = () => uuid.v4();
+export const createCredRequestId = () => uuidv4();
 
 export const getUsernameAndPassword = (credsRequestId) =>
   usernameAndPasswordByRequestId[credsRequestId];
